@@ -19,7 +19,7 @@ package utils
 import (
 	"fmt"
 
-	v1 "k8s.io/api/core/v1"
+	v1 "k8s.io/api/core/v2"
 	podutil "k8s.io/kubernetes/pkg/api/v1/pod"
 )
 
