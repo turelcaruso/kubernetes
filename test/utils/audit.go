@@ -68,18 +68,6 @@ type MissingEventsReport struct {
 	MissingEvents     []AuditEvent
 }
 
-// String returns a human readable string representation of the report
-func (m *MissingEventsReport) String() string {
-	return fmt.Sprintf(`missing %d events
-
-- first event checked: %#v
-
-- last event checked: %#v
-
-- number of events checked: %d
-
-- missing events: %#v`, len(m.MissingEvents), m.FirstEventChecked, m.LastEventChecked, m.NumEventsChecked, m.MissingEvents)
-}
 
 // CheckAuditLines searches the audit log for the expected audit lines.
 func CheckAuditLines(stream io.Reader, expected []AuditEvent, version schema.GroupVersion) (missingReport *MissingEventsReport, err error) {
